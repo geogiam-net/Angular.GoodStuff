@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.idea/.idea.Angular.GoodStuff/.idea
+/.vs
+/src/Angular.GoodStuff.Backend.Api/bin
+/src/Angular.GoodStuff.Backend.Api/obj

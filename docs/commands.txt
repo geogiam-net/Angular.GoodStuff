@@ -1,0 +1,28 @@
+
+// first install node.js from website
+npm install -g @angular/cli
+
+// check version
+ng v
+
+https://angular.dev/cli
+
+// it is placed inside src/app
+ng generate component {internalpath}/{name}
+ng generate enum [name] [options]
+ng generate class [name] [options]
+ng generate directive [name] [options]
+ng generate pipe [name] [options]
+ng generate service [name] [options]
+
+ng add @ng-bootstrap/ng-bootstrap
+
+// To start a local development server, run:
+ng serve
+
+
+
+
+
+
+
