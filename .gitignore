@@ -6,3 +6,4 @@
 /.vs
 /src/Angular.GoodStuff.Backend.Api/bin
 /src/Angular.GoodStuff.Backend.Api/obj
+/src/Angular.GoodStuff.Frontend/node_modules
