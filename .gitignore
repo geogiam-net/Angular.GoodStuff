@@ -7,3 +7,5 @@
 /src/Angular.GoodStuff.Backend.Api/bin
 /src/Angular.GoodStuff.Backend.Api/obj
 /src/Angular.GoodStuff.Frontend/node_modules
+/src/Angular.GoodStuff.Frontend/.angular/cache/22.2.5/angular-goodstuff/.tsbuildinfo
+/src/Angular.GoodStuff.Frontend/.angular/cache/22.2.5/angular-goodstuff/vite/deps

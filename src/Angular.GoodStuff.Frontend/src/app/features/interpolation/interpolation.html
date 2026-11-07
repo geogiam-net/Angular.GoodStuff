@@ -1,0 +1,28 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">1 way and 2 way data binding</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          {{ text }}
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <img [src]="imageUrl" alt="Angular Logo" style="width: 60px" />
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <button (click)="onButtonClick()">Click me for an alert</button>
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <input [(ngModel)]="name" placeholder="Enter your name" />
+          <p>Hello, {{ name }}!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

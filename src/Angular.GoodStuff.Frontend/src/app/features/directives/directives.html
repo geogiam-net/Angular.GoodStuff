@@ -1,0 +1,45 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Language directives</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          @if (isLoggedIn) {
+            <div>Logged in simulation</div>
+          } @else if (!isLoggedIn) {
+            <div>We don't know you</div>
+          }
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <ul>
+            @for (user of users; track user.id; let index = $index) {
+              <li>{{ index }}: {{ user.name }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <ul>
+            @for (car of cars; track car) {
+              <li>{{ car }}</li>
+            } @empty {
+              <li>No items found</li>
+            }
+          </ul>
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          @switch (case) {
+            @case (1) {
+              <p>case is #1</p>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
