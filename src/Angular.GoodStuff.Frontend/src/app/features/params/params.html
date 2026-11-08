@@ -1,0 +1,19 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Parameters</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          <app-input-texts
+            [value]="secondName"
+            [data]="userData"
+            (outputVal)="outputValChanged($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
