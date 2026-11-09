@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import type { User } from '~core/types/user';
+import { UsersService } from '~core/services/users-service';
 
 @Component({
   imports: [],
@@ -7,26 +8,15 @@ import type { User } from '~core/types/user';
   styleUrl: './directives.css',
   templateUrl: './directives.html',
 })
-export class DirectivesFeature {
+export class DirectivesFeature implements OnInit {
+  userService = inject(UsersService);
+
+  users: User[] = [];
+  cars = [];
+  case = 1;
   isLoggedIn = false;
 
-  // use track for better performance
-  users: User[] = [
-    {
-      name: 'john',
-      id: '1',
-    },
-    {
-      name: 'jonathan',
-      id: '2',
-    },
-    {
-      name: 'judas',
-      id: '3',
-    },
-  ];
-
-  cars = [];
-
-  case = 1;
+  ngOnInit(): void {
+    this.users = this.userService.getDevData();
+  }
 }

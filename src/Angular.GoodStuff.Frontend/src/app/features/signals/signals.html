@@ -1,0 +1,30 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Signals</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+      </ol>
+
+      <div class="row">
+        <div class="col-xl-2 col-md-2">
+          <span>{{ this.colorState() }}</span>
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <button (click)="onBtClick()">Click To Change</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          <ul>
+            @for (article of renderedArticles(); track article.id) {
+              <li>{{ article.name }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

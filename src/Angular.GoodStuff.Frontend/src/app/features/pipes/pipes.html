@@ -1,0 +1,31 @@
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Pipes</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"></li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-2 col-md-2">
+          <span>{{ exampleText | titlecase }}</span>
+        </div>
+
+        <div class="col-xl-2 col-md-2">
+          <span>{{ exampleText | uppercase }}</span>
+        </div>
+
+        <div class="col-xl-2 col-md-2">
+          <span>{{ exampleNumber | currency }}</span>
+        </div>
+
+        <div class="col-xl-2 col-md-2">
+          <span>{{ exampleNumber | currency: 'EUR' }}</span>
+        </div>
+
+        <div class="col-xl-2 col-md-2">
+          <span>{{ exampleNumber | currency: 'EUR' : 'symbol' : '4.1-2' }}</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
