@@ -19,4 +19,6 @@ export const SERVER_URLS = {
 
 export const BACKEND_URLS = {
   health: `${SERVER_URLS.backend}/api/health`,
+  users: `${SERVER_URLS.backend}/api/users`,
+  articles: `${SERVER_URLS.backend}/api/articles`,
 };
