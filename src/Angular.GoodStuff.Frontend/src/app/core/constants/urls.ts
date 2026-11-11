@@ -21,4 +21,9 @@ export const BACKEND_URLS = {
   health: `${SERVER_URLS.backend}/api/health`,
   users: `${SERVER_URLS.backend}/api/users`,
   articles: `${SERVER_URLS.backend}/api/articles`,
+  editArticles: `${SERVER_URLS.backend}/api/articles/{id}`,
+
+  delay: `${SERVER_URLS.backend}/api/delay`,
+  notFound: `${SERVER_URLS.backend}/api/not-found`,
+  badRequest: `${SERVER_URLS.backend}/api/bad-request`,
 };

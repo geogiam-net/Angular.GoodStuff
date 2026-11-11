@@ -26,6 +26,9 @@ export class HttpclientFeature implements OnInit, OnDestroy {
   retrivedUsers = signal<User[]>([]);
   colorState = signal<string>('rojo');
 
+  artIdState = signal<string>('');
+  artNameState = signal<string>('');
+
   retrivedArticles2 = computed(() => {
     const activeColor = this.colorState();
     return this.artService2.allArticles().filter((art) => art.color == activeColor);
@@ -61,5 +64,19 @@ export class HttpclientFeature implements OnInit, OnDestroy {
     } else {
       this.colorState.set('azul');
     }
+  }
+
+  changeArticleButton() {
+    this.artService2.editArticle(this.artIdState(), this.artNameState());
+  }
+
+  changeArticleId(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.artIdState.set(inputElement.value);
+  }
+
+  changeArticleName(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.artNameState.set(inputElement.value);
   }
 }

@@ -37,11 +37,16 @@ public static class DevEndpoints
     {
         app.MapGet("/api/health", GetHealth);
 
+        app.MapGet("/api/not-found", GetNotFoundError);
+        app.MapGet("/api/bad-request", GetBadRequestError);
+        app.MapGet("/api/delay", GetDelay);
+
         app.MapGet("/api/users", GetUsers);
         app.MapPut("/api/users", EditUser);
 
         app.MapPost("/api/articles", CreateArticle);
         app.MapGet("/api/articles", GetArticles);
+        app.MapPut("/api/articles/{id}", EditArticle);
 
         return app;
     }
@@ -49,6 +54,23 @@ public static class DevEndpoints
     private static IResult GetHealth()
     {
         return Results.Ok("Service is running oaky!");
+    }
+
+    private static IResult GetNotFoundError()
+    {
+        return Results.NotFound("Resource not found");
+    }
+
+    private static IResult GetBadRequestError()
+    {
+        return Results.BadRequest("Bad request");
+    }
+
+    private static IResult GetDelay()
+    {
+        // Simulate a delay of 5 seconds for testing purposes
+        Thread.Sleep(5000);
+        return Results.Ok();
     }
 
     private static IResult GetUsers()
@@ -103,5 +125,26 @@ public static class DevEndpoints
     private static IResult GetArticles()
     {     
         return Results.Ok(articles);
+    }
+
+    private static IResult EditArticle(
+        int id,
+        string name,
+        CancellationToken ct)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return Results.BadRequest("Article name can not be empty");
+        }
+
+        var existingArticle = articles.FirstOrDefault(p => p.Id == id);
+        if (existingArticle is null)
+        {
+            return Results.NotFound("Article not found");
+        }
+
+        existingArticle.Name = name;
+
+        return TypedResults.Ok();
     }
 }

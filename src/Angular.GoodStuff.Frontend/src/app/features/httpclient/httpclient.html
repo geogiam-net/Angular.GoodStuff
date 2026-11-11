@@ -31,11 +31,11 @@
       </div>
 
       <div class="row">
-        <div class="col-xl-2 col-md-2">
+        <div class="col-xl-4 col-md-4">
           <span>{{ this.colorState() }}</span>
         </div>
 
-        <div class="col-xl-12 col-md-12">
+        <div class="col-xl-4 col-md-4">
           <button (click)="onBtClick()">Click To Change</button>
         </div>
       </div>
@@ -55,6 +55,25 @@
           }
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xl-4 col-md-4">
+          Id: <input type="text" [value]="this.artIdState()" (input)="changeArticleId($event)" />
+        </div>
+
+        <div class="col-xl-4 col-md-4">
+          Name:
+          <input type="text" [value]="this.artNameState()" (input)="changeArticleName($event)" />
+        </div>
+
+        <div class="col-xl-4 col-md-4">
+          Edit: <button (click)="changeArticleButton()">Change Article</button>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
     </div>
   </main>
 </div>
