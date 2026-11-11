@@ -7,14 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("web",
-//        policy => policy
-//            .AllowAnyHeader()
-//            .AllowAnyMethod()
-//            .AllowAnyOrigin());
-//});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("web",
+        policy => policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin());
+});
 
 builder.Services.AddProblemDetails();
 
@@ -22,7 +22,7 @@ builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
-//app.UseCors("web");
+app.UseCors("web");
 
 app.UseSwagger();
 app.UseSwaggerUI(options =>

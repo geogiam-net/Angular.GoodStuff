@@ -1,5 +1,8 @@
 import { Service } from '@angular/core';
 import { Article } from '~core/types/article';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { BACKEND_URLS } from '~core/constants/urls';
 
 @Service()
 export class ArticlesService {
@@ -37,5 +40,9 @@ export class ArticlesService {
         color: 'rojo',
       },
     ];
+  }
+
+  getApiData(http: HttpClient): Observable<Article[]> {
+    return http.get<Article[]>(BACKEND_URLS.articles);
   }
 }

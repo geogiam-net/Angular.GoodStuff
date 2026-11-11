@@ -1,5 +1,8 @@
 import { Service } from '@angular/core';
 import { User } from '~core/types/user';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { BACKEND_URLS } from '~core/constants/urls';
 
 @Service()
 export class UsersService {
@@ -18,5 +21,9 @@ export class UsersService {
         id: '3',
       },
     ];
+  }
+
+  getApiData(http: HttpClient): Observable<User[]> {
+    return http.get<User[]>(BACKEND_URLS.users);
   }
 }

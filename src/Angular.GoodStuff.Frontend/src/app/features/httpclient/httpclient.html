@@ -7,7 +7,53 @@
       </ol>
 
       <div class="row">
-        <div class="col-xl-2 col-md-2"></div>
+        <div class="col-xl-12 col-md-12">
+          <ul>
+            @for (retrivedArticle of retrivedArticles(); track retrivedArticle.id) {
+              <li>{{ retrivedArticle.name }}</li>
+            } @empty {
+              <li>No items loaded</li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          <ul>
+            @for (retrivedUser of retrivedUsers(); track retrivedUser.id) {
+              <li>{{ retrivedUser.name }}</li>
+            } @empty {
+              <li>No items loaded</li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-2 col-md-2">
+          <span>{{ this.colorState() }}</span>
+        </div>
+
+        <div class="col-xl-12 col-md-12">
+          <button (click)="onBtClick()">Click To Change</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          @if (artService2.error()) {
+            <div>Could not load articles2 information</div>
+          } @else if (artService2.loading()) {
+            <div>Loading articles2 info...</div>
+          } @else {
+            <ul>
+              @for (article of retrivedArticles2(); track article.id) {
+                <li>{{ article.name }}</li>
+              }
+            </ul>
+          }
+        </div>
       </div>
     </div>
   </main>

@@ -8,6 +8,8 @@ import {
   AfterViewInit,
   AfterViewChecked,
   OnDestroy,
+  afterNextRender,
+  afterEveryRender,
 } from '@angular/core';
 
 @Component({
@@ -29,6 +31,22 @@ export class LifeCycleFeature
     AfterViewChecked,
     OnDestroy
 {
+  constructor() {
+    // https://angular.dev/api/core/afterNextRender
+    afterNextRender({
+      write: () => {
+        //this.chart = new MyChart(this.chartRef().nativeElement);
+      },
+    });
+
+    // https://angular.dev/api/core/afterEveryRender
+    afterEveryRender({
+      read: () => {
+        //console.log('content height: ' + this.contentRef().nativeElement.scrollHeight);
+      },
+    });
+  }
+
   ngOnInit() {}
   ngOnChanges() {}
   ngDoCheck() {}
